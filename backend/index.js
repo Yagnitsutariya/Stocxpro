@@ -21,7 +21,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser()); 
 
-app.use("/", authRoute);
+
 
 app.get("/allHolding", async (req,res)=>{
   let allHolding = await HoldingModel.find({});
