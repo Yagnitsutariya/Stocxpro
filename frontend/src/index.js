@@ -11,6 +11,7 @@ import Supportpage from './support/SupportPage';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Notfound from './Notfound';
+import Login from './signup/Login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,6 +26,7 @@ root.render(
       <Route path='pricing' element ={<PricingPage/>}></Route>
       <Route path='support' element ={<Supportpage/>}></Route>
       <Route path='*' element ={<Notfound/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
     </Routes>
     <Footer/> 
   </BrowserRouter>

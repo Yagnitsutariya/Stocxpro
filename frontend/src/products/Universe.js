@@ -2,7 +2,7 @@ import React from "react";
 
 function Universe() {
   return (
-     <div className="container mt-5">
+    <div className="container mt-5">
       <div className="row text-center">
         <h1 className="w-100">The Zerodha Universe</h1>
         <p className="w-100">
@@ -38,12 +38,13 @@ function Universe() {
       </div>
       <div className="row">
         <div className="col-12 text-center">
-          <button
-            className="p-2 btn btn-primary fs-5 mb-5 mt-4"
-            style={{ width: "60%", maxWidth: "300px", margin: "0 auto" }}
+          <a
+            href="/signup"
+            className="btn btn-primary fs-5"
+            style={{ width: "20%", margin: "0 auto" }}
           >
             Signup Now
-          </button>
+          </a>
         </div>
       </div>
     </div>
