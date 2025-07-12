@@ -55,6 +55,11 @@ app.post("/newOrder", async (req, res) => {
 
 app.use("/auth", authRoute);
 
+// router.get("/logout", (req, res) => {
+//   res.clearCookie("token");
+//   res.json({ message: "Logged out successfully" });
+// });
+
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
