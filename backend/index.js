@@ -53,6 +53,8 @@ app.post("/newOrder", async (req, res) => {
   res.send("Order saved!");
 });
 
+app.use("/auth", authRoute);
+
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
