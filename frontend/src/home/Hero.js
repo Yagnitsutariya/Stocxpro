@@ -1,17 +1,33 @@
-import React from 'react'
+import React from 'react';
 
 function Hero() {
-    return ( 
-        <div className='conatainer p-5'>
-            <div className='row text-center'>
-                <img src='images/homeHero.png' alt='HeroImg' className='mb-5'></img>
+  return (
+    <div className='container py-5'>
+      <div className='row justify-content-center text-center'>
+        <div className='col-12 col-md-10'>
+          <img
+            src='images/homeHero.png'
+            alt='HeroImg'
+            className='img-fluid mb-4'
+          />
 
-                <h1 className='mt-5'>Invest in everything</h1>
-                <p className=''>Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</p>
-                <a href='/signup' className='p-2 btn btn-primary fs-5' style={{width:"20%", margin:'0 auto'}}>Signup Now</a>
-            </div>
+          <h1 className='mt-4'>Invest in everything</h1>
+          <p className='mb-4'>
+            Online platform to invest in stocks, derivatives, mutual funds,
+            ETFs, bonds, and more.
+          </p>
+
+          <a
+            href='/signup'
+            className='btn btn-primary fs-5 px-4 py-2'
+            style={{ minWidth: '200px' }}
+          >
+            Signup Now
+          </a>
         </div>
-     );
+      </div>
+    </div>
+  );
 }
 
 export default Hero;

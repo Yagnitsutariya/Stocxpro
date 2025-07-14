@@ -1,174 +1,104 @@
 import React from "react";
 
 function CreateTicket() {
+  const sections = [
+    {
+      icon: "fa-plus-circle",
+      title: "Account Opening",
+      links: [
+        "Resident individual",
+        "Minor",
+        "Non Resident Indian (NRI)",
+        "Opening",
+        "NRI Account Opening",
+        "Company, Partnership, HUF and LLP",
+        "Glossary",
+      ],
+    },
+    {
+      icon: "fa-user",
+      title: "Your Account",
+      links: [
+        "Your Profile",
+        "Account modification",
+        "Client Master Report (CMR) and Depository Participant (DP)",
+        "Nomination",
+        "NRI Account Opening",
+        "Transfer and conversion of securities",
+      ],
+    },
+    {
+      icon: "fa-chart-simple",
+      title: "Kite",
+      links: [
+        "IPO",
+        "Trading FAQs",
+        "Margin Trading Facility (MTF) and Margins",
+        "Charts and orders",
+        "Alerts and Nudges",
+        "General",
+      ],
+    },
+    {
+      icon: "fa-hard-drive",
+      title: "Fund",
+      links: ["Add money", "Withdraw money", "Add bank accounts", "eMandates"],
+    },
+    {
+      icon: "fa-circle-check",
+      title: "Console",
+      links: [
+        "Portfolio",
+        "Corporate actions",
+        "Funds statement",
+        "Reports",
+        "Profile",
+        "Segments",
+      ],
+    },
+    {
+      icon: "fa-circle",
+      title: "Coin",
+      links: [
+        "Mutual funds",
+        "National Pension Scheme (NPS)",
+        "Features on Coin",
+        "Payments and Orders",
+        "General",
+      ],
+    },
+  ];
+
   return (
-    <div className="container">
-      <div
-        className="row p-5 mt-5 mb-5"
-        style={{ fontSize: "14px", fontWeight: "400" }}
-      >
-        <h1 className="fs-2">To create a ticket, select a relevant topic</h1>
-        <div className="col-4 p-5 mt-2 mb-2 " style={{ paddingLeft: "10px" }}>
-          <h4 style={{ fontWeight: "400", color: "#222" }}>
-            <i className="fa fa-plus-circle" aria-hidden="true"></i> Account
-            Opening
-          </h4>
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Resident individual
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Minor
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Non Resident Indian (NRI)
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Opening
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            NRI Account Opening
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Company, Partnership, HUF and LLP
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Glossary
-          </a>
+    <div className="container my-5">
+      <div className="row px-3">
+        <div className="col-12 mb-4">
+          <h1 className="fs-2">To create a ticket, select a relevant topic</h1>
         </div>
-        <div className="col-4 p-5 mt-2 mb-2 ">
-          <h4 style={{ fontWeight: "400", color: "#222" }}>
-            <i className="fa-regular fa-user"></i>Your Account
-          </h4>
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Your Profile
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Account modification
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Client Master Report (CMR) and Depository Participant (DP)
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Nomination
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            NRI Account Opening
-          </a>
-          <br />
-          <a href="#" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Transfer and conversion of securities
-          </a>
-        </div>
-        <div className="col-4 p-5 mt-2 mb-2">
-          <h4 style={{ fontWeight: "400" }}>
-            <i class="fa-solid fa-chart-simple"></i> Kite
-          </h4>
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            IPO
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Trading FAQs
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Margin Trading Facility (MTF) and Margins
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Charts and orders
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Alerts and Nudges
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            General
-          </a>
-        </div>
-        <div className="col-4 p-5 mt-2 mb-2">
-          <h4 style={{ fontWeight: "400" }}>
-            <i class="fa-regular fa-hard-drive"></i> Fund
-          </h4>
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Add money
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Withdraw money
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Add bank accounts
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            eMandates
-          </a>
-        </div>
-        <div className="col-4 p-5 mt-2 mb-2">
-          <h4 style={{ fontWeight: "400" }}>
-            <i class="fa-regular fa-circle-check"></i> Console
-          </h4>
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Portfolio
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Corporate actions
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Funds statement
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Reports
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Profile
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Segments
-          </a>
-        </div>
-        <div className="col-4 p-5 mt-2 mb-2">
-          <h4 style={{ fontWeight: "400" }}>
-           <i className="fa-regular fa-circle" aria-hidden="true"></i> Coin
-          </h4>
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Mutual funds
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            National Pension Scheme (NPS)
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Features on Coin
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            Payments and Orders
-          </a>
-          <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>
-            General
-          </a>
-        </div>
+
+        {sections.map((section, idx) => (
+          <div
+            className="col-12 col-md-6 col-lg-4 mb-4"
+            key={idx}
+          >
+            <h5 className="mb-3 fw-normal text-dark">
+              <i className={`fa ${section.icon} me-2`} aria-hidden="true"></i>
+              {section.title}
+            </h5>
+            <div className="d-flex flex-column gap-2">
+              {section.links.map((link, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="text-decoration-none"
+                  style={{ lineHeight: "1.8", fontSize: "14px" }}
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
