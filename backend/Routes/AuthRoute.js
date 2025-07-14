@@ -3,20 +3,21 @@ const router = express.Router();
 const { Signup, Login } = require("../Controller/AuthController");
 const { userVerification } = require("../Middleware/Middleware");
 
+// Public routes
 router.post("/signup", Signup);
 router.post("/login", Login);
 
-router.use(userVerification);
-router.get("/me", (req, res) => {
+// Protected route
+router.get("/me", userVerification, (req, res) => {
   try {
     if (req.user) {
-      res.json({ user: req.user });
+      res.status(200).json({ success: true, user: req.user });
     } else {
-      throw new Error("User not found");
+      res.status(404).json({ success: false, message: "User not found" });
     }
   } catch (error) {
-    console.error(error);
-    res.json({ message: "Error fetching user data" });
+    console.error("Error fetching user:", error);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 

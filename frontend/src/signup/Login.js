@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import "./Login.css"; 
+import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,33 +31,37 @@ const Login = () => {
     });
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post(
-        "http://localhost:4000/auth/login",
-        {
-          ...inputValue,
-        },
-        { withCredentials: true }
-      );
-      const { success, message } = data;
-      if (success) {
-        handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      } else {
-        handleError(message);
-      }
-    } catch (error) {
-      console.log(error);
+  e.preventDefault();
+  try {
+    const { data } = await axios.post(
+      "http://localhost:3002/auth/login",
+      {
+        ...inputValue,
+      },
+      { withCredentials: true }
+    );
+    const { success, message } = data;
+    if (success) {
+      handleSuccess(message);
+      setTimeout(() => {
+        window.location.href = "http://localhost:3001/";
+      }, 1000);
+    } else {
+      handleError(message);
     }
-    setInputValue({
-      ...inputValue,
-      email: "",
-      password: "",
-    });
-  };
+  } catch (error) {
+    if (error.response && error.response.data && error.response.data.message) {
+      handleError(error.response.data.message); 
+    } else {
+      handleError("Login failed. Please try again.");
+    }
+  }
+  setInputValue({
+    email: "",
+    password: "",
+  });
+};
+
 
   return (
     <div className="form_container">

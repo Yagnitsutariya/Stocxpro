@@ -1,10 +1,33 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
+ 
 const Summary = () => {
+  const [username, setUsername] = useState("");
+
+     useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const { data } = await axios.get("http://localhost:3002/auth/me", {
+          withCredentials: true, 
+        });
+
+        if (data && data.user) {
+          setUsername(data.user.username);
+        }
+      } catch (error) {
+        console.error("Error fetching user info:", error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>Hi,{username || "User"}</h6>
         <hr className="divider" />
       </div>
 

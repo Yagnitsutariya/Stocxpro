@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const [selectedMenu, setselectedMenu] = useState(0);
   const [isProfileDropdownOpen, setisProfileDropdownOpen] = useState(false);
 
@@ -12,6 +13,11 @@ const Menu = () => {
 
   const handleProfileClick = () => {
     setisProfileDropdownOpen(!isProfileDropdownOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "http://localhost:3000/login";
   };
 
   const menuClass = "menu";
@@ -90,18 +96,14 @@ const Menu = () => {
               </p>
             </Link>
           </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/apps"
-              onClick={() => {
-                handleMenuClick(5);
-              }}
-            >
-              <p className={selectedMenu === 5 ? menuClassActive : menuClass}>
-                Apps
-              </p>
-            </Link>
+          <li
+            onClick={() => {
+              handleMenuClick(5);
+              handleLogout();
+            }}>
+            <p className={selectedMenu === 5 ? menuClassActive : menuClass}>
+              Logout
+            </p>
           </li>
         </ul>
         <hr />
@@ -110,7 +112,6 @@ const Menu = () => {
           <p className="username">USERID</p>
         </div>
       </div>
-      
     </div>
   );
 };

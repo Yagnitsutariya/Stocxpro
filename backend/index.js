@@ -17,7 +17,12 @@ const uri = process.env.MONGO_URL
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "http://localhost:3001"],       
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 app.use(cookieParser()); 
 
@@ -54,12 +59,6 @@ app.post("/newOrder", async (req, res) => {
 });
 
 app.use("/auth", authRoute);
-
-// router.get("/logout", (req, res) => {
-//   res.clearCookie("token");
-//   res.json({ message: "Logged out successfully" });
-// });
-
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
